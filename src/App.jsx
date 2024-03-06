@@ -12,18 +12,18 @@ function App() {
   });
   const getData = async () => {
     try {
-      //   const {data} = await axios.get("https://v6.exchangerate-api.com/v6/69d9d2dad7291ba3924ae39c/latest/TRY");
-      //  setMoney({
-      //   TRY: data.conversion_rates?.TRY,
-      //   USD: data.conversion_rates.TRY / data.conversion_rates?.USD,
-      //   EUR: data.conversion_rates.TRY/ data.conversion_rates?.EUR
+        const {data} = await axios.get("https://v6.exchangerate-api.com/v6/69d9d2dad7291ba3924ae39c/latest/TRY");
+       setMoney({
+        TRY: data.conversion_rates?.TRY,
+        USD: (data.conversion_rates.TRY / data.conversion_rates?.USD).toFixed(3) ,
+        EUR: (data.conversion_rates.TRY/ data.conversion_rates?.EUR).toFixed(3)
 
-      //  })
-      setMoney({
-        TRY: 1,
-        USD: 32,
-        EUR: 31,
-      });
+       })
+      // setMoney({
+      //   TRY: 1,
+      //   USD: 32,
+      //   EUR: 31,
+      // });
     } catch (error) {
       console.error("API'den veri alınırken bir hata oluştu:", error);
     }
