@@ -5,37 +5,6 @@ import { useEffect } from "react";
 
 function App() {
 
-  const [installPrompt, setInstallPrompt] = useState(null);
-
-  useEffect(() => {
-    const beforeInstallPromptHandler = (e) => {
-      // Kurulum isteğini engelle
-      e.preventDefault();
-      // Olay referansını sakla, böylece daha sonra kullanılabilir
-      setInstallPrompt(e);
-    };
-
-    window.addEventListener('beforeinstallprompt', beforeInstallPromptHandler);
-
-    // Temizleme fonksiyonu
-    return () => window.removeEventListener('beforeinstallprompt', beforeInstallPromptHandler);
-  }, []);
-
-  const handleInstallClick = () => {
-    if (installPrompt) {
-      installPrompt.prompt();
-      installPrompt.userChoice.then((choiceResult) => {
-        if (choiceResult.outcome === 'accepted') {
-          console.log('Kullanıcı PWA kurulumunu kabul etti.');
-        } else {
-          console.log('Kullanıcı PWA kurulumunu reddetti.');
-        }
-        setInstallPrompt(null); // Kurulum sonrası tekrar kullanılmak üzere sıfırla
-      });
-    }
-  };
-  
-
   const [money, setMoney] = useState({
     TRY: null,
     USD: null,
@@ -65,7 +34,7 @@ function App() {
 
   return (
     <div>
-     <button onClick={handleInstallClick}>Uygulamayı Kur</button>
+
       <div>Dolar {money.USD}</div>
       <div>EURO {money.EUR}</div>
     </div>

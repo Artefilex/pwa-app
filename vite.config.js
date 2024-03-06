@@ -6,9 +6,8 @@ export default defineConfig({
   plugins: [
     react(), 
     VitePWA({ 
-      injectRegister:"inline",
       registerType: "autoUpdate" ,
-      start_url: '/',
+      start_url: '.',
       manifest:{
        
         name: "English Time",
@@ -20,9 +19,7 @@ export default defineConfig({
       devOptions: {
         enabled: true
       },
-      workbox: {
-        globPatterns: ['**/*.{js,css}', 'index.html'],
-      },
+   
 
 })],
 });
