@@ -8,6 +8,7 @@ export default defineConfig({
     VitePWA({ 
       injectRegister:"inline",
       registerType: "autoUpdate" ,
+      start_url: '/',
       manifest:{
         name: "English Time",
         short_name:"Daily English",
@@ -17,6 +18,10 @@ export default defineConfig({
       },
       devOptions: {
         enabled: true
-      }
+      },
+      workbox: {
+        globPatterns: ['**/*.{js,css}', 'index.html'],
+      },
+
 })],
 });
