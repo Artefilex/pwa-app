@@ -10,11 +10,12 @@ export default defineConfig({
       registerType: "autoUpdate" ,
       start_url: '/',
       manifest:{
+       
         name: "English Time",
         short_name:"Daily English",
         description:"Every Day New word",
         theme_color:"#000000",
-        
+        display:"fullscreen",
       },
       devOptions: {
         enabled: true
