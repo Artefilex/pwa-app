@@ -65,7 +65,7 @@ function App() {
 
   return (
     <div>
-    {installPrompt && <button onClick={handleInstallClick}>Uygulamayı Kur</button>}
+     <button onClick={handleInstallClick}>Uygulamayı Kur</button>
       <div>Dolar {money.USD}</div>
       <div>EURO {money.EUR}</div>
     </div>
